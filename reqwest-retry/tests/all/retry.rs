@@ -2,9 +2,10 @@ use async_std::io::ReadExt;
 use futures::AsyncWriteExt;
 use futures::FutureExt;
 use paste::paste;
-use reqwest::Client;
-use reqwest::StatusCode;
-use reqwest_middleware::ClientBuilder;
+use reqwest_middleware::{
+    reqwestplus::{Client, StatusCode},
+    ClientBuilder,
+};
 use reqwest_retry::{policies::ExponentialBackoff, RetryTransientMiddleware};
 use std::sync::atomic::AtomicI8;
 use std::sync::{

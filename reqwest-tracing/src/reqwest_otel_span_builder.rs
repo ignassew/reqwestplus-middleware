@@ -1,8 +1,12 @@
 use std::borrow::Cow;
 
-use reqwest::header::{HeaderMap, HeaderValue};
-use reqwest::{Request, Response, StatusCode as RequestStatusCode, Url};
-use reqwest_middleware::{Error, Result};
+use reqwest_middleware::{
+    reqwestplus::{
+        header::{HeaderMap, HeaderValue},
+        Request, Response, StatusCode as RequestStatusCode, Url,
+    },
+    Error, Result,
+};
 use task_local_extensions::Extensions;
 use tracing::Span;
 

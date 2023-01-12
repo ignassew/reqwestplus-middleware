@@ -1,7 +1,7 @@
 use std::io;
 
 use http::StatusCode;
-use reqwest_middleware::Error;
+use reqwest_middleware::{reqwestplus, Error};
 
 /// Classification of an error/status returned by request.
 #[derive(PartialEq, Eq)]
@@ -17,7 +17,7 @@ impl Retryable {
     ///
     /// Returns `None` if the response object does not contain any errors.
     ///
-    pub fn from_reqwest_response(res: &Result<reqwest::Response, Error>) -> Option<Self> {
+    pub fn from_reqwest_response(res: &Result<reqwestplus::Response, Error>) -> Option<Self> {
         match res {
             Ok(success) => {
                 let status = success.status();
@@ -86,8 +86,8 @@ impl Retryable {
     }
 }
 
-impl From<&reqwest::Error> for Retryable {
-    fn from(_status: &reqwest::Error) -> Retryable {
+impl From<&reqwestplus::Error> for Retryable {
+    fn from(_status: &reqwestplus::Error) -> Retryable {
         Retryable::Transient
     }
 }

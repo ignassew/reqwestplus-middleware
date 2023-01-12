@@ -3,8 +3,10 @@
 use crate::retryable::Retryable;
 use anyhow::anyhow;
 use chrono::Utc;
-use reqwest::{Request, Response};
-use reqwest_middleware::{Error, Middleware, Next, Result};
+use reqwest_middleware::{
+    reqwestplus::{Request, Response},
+    Error, Middleware, Next, Result,
+};
 use retry_policies::RetryPolicy;
 use task_local_extensions::Extensions;
 

@@ -40,7 +40,7 @@ use reqwest_tracing::TracingMiddleware;
 async fn main() {
     // Retry up to 3 times with increasing intervals between attempts.
     let retry_policy = ExponentialBackoff::builder().build_with_max_retries(3);
-    let client = ClientBuilder::new(reqwest::Client::new())
+    let client = ClientBuilder::new(reqwestplus::Client::new())
         // Trace HTTP requests. See the tracing crate to make use of these traces.
         .with(TracingMiddleware::default())
         // Retry failed requests.

@@ -12,7 +12,7 @@
 //! async fn run_retries() {
 //!     // Retry up to 3 times with increasing intervals between attempts.
 //!     let retry_policy = ExponentialBackoff::builder().build_with_max_retries(3);
-//!     let client = ClientBuilder::new(reqwest::Client::new())
+//!     let client = ClientBuilder::new(reqwestplus::Client::new())
 //!         .with(RetryTransientMiddleware::new_with_policy(retry_policy))
 //!         .build();
 //!

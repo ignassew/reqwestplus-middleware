@@ -18,7 +18,6 @@ chrono = { version = "0.4.19", features = ["clock"], default-features = false }
 futures = "0.3"
 http = "0.2"
 hyper = "0.14"
-reqwest = { version = "0.11", default-features = false }
 retry-policies = "0.1"
 task-local-extensions = "0.1.1"
 tokio = { version = "1.6", features = ["time"] }

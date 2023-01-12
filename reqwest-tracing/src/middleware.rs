@@ -1,5 +1,7 @@
-use reqwest::{Request, Response};
-use reqwest_middleware::{Middleware, Next, Result};
+use reqwest_middleware::{
+    reqwestplus::{Request, Response},
+    Middleware, Next, Result,
+};
 use task_local_extensions::Extensions;
 use tracing::Instrument;
 

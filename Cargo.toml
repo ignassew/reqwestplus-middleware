@@ -4,3 +4,7 @@ members = [
   "reqwest-tracing",
   "reqwest-retry",
 ]
+
+[patch.crates-io]
+hyper = { git = "https://github.com/4JX/hyper.git", branch = "v0.14.18-patched" }
+h2 = { git = "https://github.com/4JX/h2.git", branch = "imp" }

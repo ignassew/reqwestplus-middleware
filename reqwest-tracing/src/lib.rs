@@ -77,7 +77,7 @@
 //!     }
 //! }
 //!
-//! let http = ClientBuilder::new(reqwest::Client::new())
+//! let http = ClientBuilder::new(reqwestplus::Client::new())
 //!     .with(TracingMiddleware::<TimeTrace>::new())
 //!     .build();
 //! ```

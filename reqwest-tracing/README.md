@@ -65,7 +65,7 @@ async fn main() {
 }
 
 async fn run() {
-    let client = ClientBuilder::new(reqwest::Client::new())
+    let client = ClientBuilder::new(reqwestplus::Client::new())
         .with(TracingMiddleware::<TimeTrace>::new())
         .build();
 
