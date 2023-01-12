@@ -37,7 +37,7 @@ where
 /// This is a good way to inject extensions to middleware deeper in the stack
 ///
 /// ```
-/// use reqwest::{Client, Request, Response};
+/// use reqwestplus::{Client, Request, Response};
 /// use reqwest_middleware::{ClientBuilder, Middleware, Next, Result, Extension};
 /// use task_local_extensions::Extensions;
 ///

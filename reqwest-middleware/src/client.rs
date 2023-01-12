@@ -1,6 +1,6 @@
-use reqwest::header::{HeaderMap, HeaderName, HeaderValue};
-use reqwest::multipart::Form;
-use reqwest::{Body, Client, IntoUrl, Method, Request, Response};
+use reqwestplus::header::{HeaderMap, HeaderName, HeaderValue};
+use reqwestplus::multipart::Form;
+use reqwestplus::{Body, Client, IntoUrl, Method, Request, Response};
 use serde::Serialize;
 use std::convert::TryFrom;
 use std::fmt::{self, Display};
@@ -84,7 +84,7 @@ impl ClientBuilder {
 /// request.
 #[derive(Clone)]
 pub struct ClientWithMiddleware {
-    inner: reqwest::Client,
+    inner: reqwestplus::Client,
     middleware_stack: Box<[Arc<dyn Middleware>]>,
     initialiser_stack: Box<[Arc<dyn RequestInitialiser>]>,
 }
@@ -185,7 +185,7 @@ impl fmt::Debug for ClientWithMiddleware {
 /// This is a wrapper around [`reqwest::RequestBuilder`] exposing the same API.
 #[must_use = "RequestBuilder does nothing until you 'send' it"]
 pub struct RequestBuilder {
-    inner: reqwest::RequestBuilder,
+    inner: reqwestplus::RequestBuilder,
     client: ClientWithMiddleware,
     extensions: Extensions,
 }
@@ -274,7 +274,7 @@ impl RequestBuilder {
         }
     }
 
-    pub fn build(self) -> reqwest::Result<Request> {
+    pub fn build(self) -> reqwestplus::Result<Request> {
         self.inner.build()
     }
 

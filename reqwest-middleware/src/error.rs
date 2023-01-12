@@ -9,7 +9,7 @@ pub enum Error {
     Middleware(#[from] anyhow::Error),
     /// Error from the underlying reqwest client
     #[error("Request error: {0}")]
-    Reqwest(#[from] reqwest::Error),
+    Reqwest(#[from] reqwestplus::Error),
 }
 
 impl Error {

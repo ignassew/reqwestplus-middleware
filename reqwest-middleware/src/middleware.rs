@@ -1,4 +1,4 @@
-use reqwest::{Client, Request, Response};
+use reqwestplus::{Client, Request, Response};
 use std::sync::Arc;
 use task_local_extensions::Extensions;
 
@@ -10,7 +10,7 @@ use crate::error::{Error, Result};
 /// # Example
 ///
 /// ```
-/// use reqwest::{Client, Request, Response};
+/// use reqwestplus::{Client, Request, Response};
 /// use reqwest_middleware::{ClientBuilder, Middleware, Next, Result};
 /// use task_local_extensions::Extensions;
 ///

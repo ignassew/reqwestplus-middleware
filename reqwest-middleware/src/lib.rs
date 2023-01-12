@@ -6,7 +6,7 @@
 //! requests is the same as with reqwest:
 //!
 //! ```
-//! use reqwest::{Client, Request, Response};
+//! use reqwestplus::{Client, Request, Response};
 //! use reqwest_middleware::{ClientBuilder, Middleware, Next, Result};
 //! use task_local_extensions::Extensions;
 //!
@@ -58,3 +58,4 @@ pub use client::{ClientBuilder, ClientWithMiddleware, RequestBuilder};
 pub use error::{Error, Result};
 pub use middleware::{Middleware, Next};
 pub use req_init::{Extension, RequestInitialiser};
+pub use reqwestplus;
